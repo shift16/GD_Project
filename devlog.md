@@ -2,8 +2,8 @@
 
 * Name: Christopher Jamieson
 * [Trello Board](https://github.com/users/shift16/projects/1/views/1) (Using GitHub's Projects feature)
-* [Proposal](./Project%20Proposal%20Final%20Refined.pdf) (Currently being rewritten)
-* [Itch.io Webpage](https://qtxt.itch.io/game-design-project)
+* [Proposal](./Project%20Proposal%20Final%20Refined.pdf)
+* [Itch.io](https://qtxt.itch.io/game-design-project)
 
 ## 2024-09-30 - 1.0hrs: Updated GitHub Repo with Requirements & Began Research
 
