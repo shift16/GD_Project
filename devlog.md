@@ -1,9 +1,14 @@
-# Fall 2024 - Intro to Game Design jamiesoc2@newpaltz.edu
+# Fall 2024 - Intro to Game Design - The Game Mechanic Project - jamiesoc2@newpaltz.edu
 
 * Name: Christopher Jamieson
 * [Trello Board](https://github.com/users/shift16/projects/1/views/1) (Using GitHub's Projects feature)
 * [Proposal](./Project%20Proposal%20Final%20Refined.pdf)
 * [Itch.io](https://qtxt.itch.io/game-design-project)
+
+## 2024-01-01 - 3.5hrs: Practiced and Messed with GDScript/Godot
+
+* Read through Godot documentation to better understand the game engine and how I can integrate my mechanic into the engine
+* Practiced GDScript to better understand how I can use it to create my game mechanic
 
 ## 2024-09-30 - 1.0hrs: Updated GitHub Repo with Requirements & Began Research
 
