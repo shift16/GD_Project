@@ -5,6 +5,12 @@
 * [Proposal](./Project%20Proposal%20Final%20Refined.pdf)
 * [Itch.io](https://qtxt.itch.io/game-design-project)
 
+## 2024-01-01 - 2.5hrs: Began implementing the SP object and the Rules and Properties objects
+
+* Added progress done on SP, Rules and Properties objects
+* Removed some old testing files
+* Practiced more GDScript/Godot
+
 ## 2024-01-01 - 3.5hrs: Practiced and Messed with GDScript/Godot
 
 * Read through Godot documentation to better understand the game engine and how I can integrate my mechanic into the engine
