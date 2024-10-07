@@ -5,7 +5,12 @@
 * [Proposal](./Project%20Proposal%20Final%20Refined.pdf)
 * [Itch.io](https://qtxt.itch.io/game-design-project)
 
-## 2024-10-06 - 3.5hrs Refactored SP, Rules and Properties objects
+## 2024-10-07 - 1.5hrs: Continued working on SPs, Rules and Properties functionality
+
+* Continued writing code for the SP class
+* Continued learning more about GDScript and Godot 4
+
+## 2024-10-06 - 3.5hrs: Refactored SP, Rules and Properties objects
 
 * Updated how SPs are created and cleaned up old code
 * Added terminology.md

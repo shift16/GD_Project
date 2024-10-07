@@ -13,7 +13,7 @@ func add_property(property_name, property_value):
 	if property_name is String:
 		Properties[property_name] = property_value
 	else:
-		printerr("Properties can only be of type string")
+		printerr("The name of a property must be a string")
 
 # Removes an existing property
 func remove_property(property_name):
@@ -24,14 +24,14 @@ func remove_property(property_name):
 			# TODO Change "this" to the location of the simulated pixel on the Dish
 			printerr("The property " + property_name + " does not exist in " + "this" + " SP") 
 	else:
-		printerr("Properties can only be of type string")
+		printerr("The name of a property must be a string")
 
 # Adds a new rule
 func add_rule(new_rule):
 	if new_rule is Rule:
 		Rules.append(new_rule)
 	else:
-		printerr("Attempted to add a rule to " + "this" + " SP that is not of type Rule" )
+		printerr("Attempted to add a rule to " + "this" + " SP that is not of type Rule. Instead, it's type " + type_string(typeof(new_rule)))
 
 # Removes an existing rule
 func remove_rule(rule_name):
