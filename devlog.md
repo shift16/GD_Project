@@ -5,6 +5,11 @@
 * [Proposal](./Project%20Proposal%20Final%20Refined.pdf)
 * [Itch.io](https://qtxt.itch.io/game-design-project)
 
+## 2024-10-08 - 3.5hrs: Completed the code for SPs (Rules and Properties) and began working on the Dish
+
+* Completed the code for SPs
+* Began working on the code for the Dish
+
 ## 2024-10-07 - 1.5hrs: Continued working on SPs, Rules and Properties functionality
 
 * Continued writing code for the SP class
