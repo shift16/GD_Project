@@ -1,10 +1,3 @@
-# Fall 2024 - Intro to Game Design - The Game Mechanic Project - jamiesoc2@newpaltz.edu
-
-* Name: Christopher Jamieson
-* [Trello Board](https://github.com/users/shift16/projects/1/views/1) (Using GitHub's Projects feature)
-* [Proposal](./Project%20Proposal%20Final%20Refined.pdf)
-* [Itch.io](https://qtxt.itch.io/game-design-project)
-
 ## 2024-10-08 - 3.5hrs: Completed the code for SPs (Rules and Properties) and began working on the Dish
 
 * Completed the code for SPs
