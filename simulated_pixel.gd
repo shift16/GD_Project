@@ -44,6 +44,6 @@ func remove_rule(rule_name):
 
 # Checks all of the rules
 # (If all the requirement functions return true, call all of the action functions)
-func check_rules():
+func check_rules(dish):
 	for rule in rules:
-		rule.check(self, properties)
+		rule.check(self, properties, dish)

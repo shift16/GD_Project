@@ -63,7 +63,7 @@ func attach_action(new_action, new_desired_props = []):
 		printerr("Requirements must be functions (type Callable), not " + type_string(typeof(new_action)))
 
 # Checks that all of the requirements are satisfied and executes the actions if they're satisfied
-func check(sp, properties):
+func check(sp, properties, dish):
 	if desired_properties == null and action == null:
 		printerr("An action was never attached to this rule")
 		
@@ -95,7 +95,7 @@ func check(sp, properties):
 					printerr("Requirements should return only boolean values not " + type_string(typeof(is_met)))
 			
 			if is_satisfied == true:
-				action.call(properties, sp)
+				action.call(properties, sp, dish)
 			elif is_satisfied == false:
 				# DEBUG
 				print("Rule " + name + " was not satisfied for SP " + "SP's unique ID") # TODO Add something to identify SPs

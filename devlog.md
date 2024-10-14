@@ -1,3 +1,8 @@
+## 2024-10-13 - 2.5hrs: Continued working on implementing the dish structure + Refining proposal once again
+
+* Continued working on the dish structure
+* Refining proposal so that an actual mechanic is being described
+
 ## 2024-10-08 - 3.5hrs: Completed the code for SPs (Rules and Properties) and began working on the Dish
 
 * Completed the code for SPs
