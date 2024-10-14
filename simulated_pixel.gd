@@ -3,6 +3,7 @@ class_name SimulatedPixel extends Node2D
 # The properties of an SP
 var properties = {
 	has_collided = false
+	# const INTERNAL_ID = Defined at runtime by the dish
 }
 
 # The rules of an SP
