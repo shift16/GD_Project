@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://hoqye3x7ssye"]
+[gd_scene load_steps=3 format=3 uid="uid://hoqye3x7ssye"]
 
-[node name="Main Scene" type="Node2D"]
+[ext_resource type="Script" path="res://runner.gd" id="1_xhoc0"]
+[ext_resource type="Script" path="res://dish.gd" id="2_6vsi8"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_xhoc0")
+
+[node name="Dish" type="Node2D" parent="."]
+script = ExtResource("2_6vsi8")

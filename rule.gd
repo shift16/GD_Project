@@ -95,7 +95,7 @@ func check(sp, properties, dish):
 					printerr("Requirements should return only boolean values not " + type_string(typeof(is_met)))
 			
 			if is_satisfied == true:
-				action.call(properties, sp, dish)
+				action.call(sp, properties, dish)
 			elif is_satisfied == false:
 				# DEBUG
 				print("Rule " + name + " was not satisfied for SP " + "SP's unique ID") # TODO Add something to identify SPs

@@ -1,3 +1,14 @@
+## 2024-10-15 - 4hrs: Continued working on main game loop and fixing bugs
+
+* Fixed many more bugs
+* Continued working on the main game loop for the mechanic
+
+## 2024-10-14 - 5hrs: Completed dish structure and Began Adding the main loop
+
+* Fixed multiple unforseen bugs
+* Began working on the main game loop for the mechanic
+* Completed dish structure
+
 ## 2024-10-13 - 2.5hrs: Continued working on implementing the dish structure + Refining proposal once again
 
 * Continued working on the dish structure

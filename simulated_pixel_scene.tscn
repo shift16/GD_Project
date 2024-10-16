@@ -5,6 +5,6 @@
 [node name="SimulatedPixelScene" type="Node2D"]
 script = ExtResource("1_6mi60")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="PixelVisual" type="ColorRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
