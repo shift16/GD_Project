@@ -54,7 +54,7 @@ func is_valid_position(position):
 		else:
 			return false
 
-# Returns a simulated pixel or empty space at the given location
+# Returns a dictionary of simulated pixels or empty space at the given location
 func get_sps_from_position(position, and_inactive = false):
 	assert(and_inactive is bool, "and_inactive must of type bool")
 	

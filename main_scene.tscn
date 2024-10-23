@@ -1,10 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://hoqye3x7ssye"]
+[gd_scene load_steps=4 format=3 uid="uid://hoqye3x7ssye"]
 
 [ext_resource type="Script" path="res://runner.gd" id="1_xhoc0"]
 [ext_resource type="Script" path="res://dish.gd" id="2_6vsi8"]
+[ext_resource type="PackedScene" uid="uid://ci6p36qxwt837" path="res://toolbox.tscn" id="3_onm2c"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_xhoc0")
 
 [node name="Dish" type="Node2D" parent="."]
+position = Vector2(191, 110)
 script = ExtResource("2_6vsi8")
+
+[node name="Toolbox" parent="." instance=ExtResource("3_onm2c")]
+offset_left = 178.0
+offset_top = 550.0
+offset_right = 1006.0
+offset_bottom = 650.0

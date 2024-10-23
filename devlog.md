@@ -1,3 +1,9 @@
+## 2024-10-23 - 5.5hrs: Started implementing the GUI for the game
+
+* Started on the GUI (The toolbox and its items)
+* Continued working on the main game loop
+* Fixed many more bugs
+
 ## 2024-10-15 - 4hrs: Continued working on main game loop and fixing bugs
 
 * Fixed many more bugs

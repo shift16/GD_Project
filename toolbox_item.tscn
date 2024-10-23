@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwfsa5olo7jef"]
+
+[ext_resource type="Script" path="res://toolbox_item.gd" id="1_pu833"]
+
+[node name="ToolboxItem" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 100.0
+offset_bottom = 100.0
+script = ExtResource("1_pu833")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 100.0
+
+[node name="SP_Name" type="Label" parent="Background"]
+layout_mode = 2
+offset_top = 77.0
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Undefined"
+horizontal_alignment = 1
+
+[node name="SP_Color" type="ColorRect" parent="Background"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 20.0
+offset_right = 75.0
+offset_bottom = 70.0
+pivot_offset = Vector2(25, 25)
+color = Color(0.431373, 0.419608, 0.447059, 0.290196)
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -83,6 +83,8 @@ func check(sp, properties, dish):
 			# There is a silent "side effect" here. If the requirements array is empty, then the action will be called regardless
 			var is_satisfied = true
 			
+			var previous_properties = properties.duplicate(true)
+			
 			for requirement in requirements:
 				var is_met = requirement.call(properties)
 				
@@ -97,5 +99,8 @@ func check(sp, properties, dish):
 			if is_satisfied == true:
 				action.call(sp, properties, dish)
 			elif is_satisfied == false:
+				# Set the properties back to the values they were before
+				for prop_name in previous_properties:
+					properties[prop_name] = previous_properties[prop_name]
 				# DEBUG
 				print("Rule " + name + " was not satisfied for SP " + "SP's unique ID") # TODO Add something to identify SPs
