@@ -1,3 +1,23 @@
+## 2024-10-29 - 3.0hrs: [In progress] Completed final draft for proposal
+
+* Completed proposal V3
+* Began game mechanic
+
+## 2024-10-27 - 3.5hrs: The new proposal
+
+* Completed rough draft for proposal
+* Started final draft for proposal
+
+## 2024-10-25 - 3.5hrs: Started working on new project
+
+* Pondered ideas and picked a new mechanic to work on
+* Started rough draft for the proposal V3
+* Completed paper prototyping V2
+
+## 2024-10-24 - 1.0hrs: Changed plans
+
+* Restarted project
+
 ## 2024-10-23 - 5.5hrs: Started implementing the GUI for the game
 
 * Started on the GUI (The toolbox and its items)
