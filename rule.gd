@@ -19,12 +19,17 @@ var action
 var desired_properties
 
 # Called when the Rule object is created
-func _init(rule_name = "NOT DEFINED", does_delete = false, does_check_collision_prop = false):
+func _init(rule_name = "NOT DEFINED", new_desired_props = [], does_delete = false, does_check_collision_prop = false):
 	# Initialize variables
 	requirements = []
 	action = null # Not initialized here
 	desired_properties = null # Not initialized here
-
+	
+	if new_desired_props is Array:
+		desired_properties = new_desired_props
+	else:
+		printerr("desired_properties must be an array of strings")
+	
 	if does_delete is bool:
 		deletes = does_delete
 	else:
@@ -51,12 +56,7 @@ func add_requirement(new_requirement):
 		printerr("Requirements must be functions (type Callable), not " + type_string(typeof(new_requirement)))
 
 # Attaches the function that will be executed when all of the requirements are met (returns true)
-func attach_action(new_action, new_desired_props = []):
-	if new_desired_props is Array:
-		desired_properties = new_desired_props
-	else:
-		printerr("desired_properties must be an array of strings")
-	
+func attach_action(new_action):
 	if new_action is Callable:
 		action = new_action
 	else:

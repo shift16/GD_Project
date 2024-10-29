@@ -18,5 +18,6 @@ func _init(on_click_callable, sp_name, sp_color):
 	
 	func_to_call = on_click_callable
 	
-	$Background/SP_Color.color = sp_color
+	var test = $Background/SP_Color
+	self.get_node("Background/SP_Color").color = sp_color
 	$Background/SP_Name.text = sp_name
