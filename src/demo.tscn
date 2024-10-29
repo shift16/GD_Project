@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://1bv2v46wwte5"]
+
+[ext_resource type="Texture2D" uid="uid://c5752lgup8jiv" path="res://assets/icon.svg" id="1_aahcn"]
+[ext_resource type="Script" path="res://src/player_ship.gd" id="1_uy6j3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1da1"]
+size = Vector2(130, 131)
+
+[node name="Demo" type="Node2D"]
+
+[node name="PlayerShip" type="CharacterBody2D" parent="."]
+script = ExtResource("1_uy6j3")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerShip"]
+texture = ExtResource("1_aahcn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerShip"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_e1da1")
+
+[node name="Camera2D" type="Camera2D" parent="PlayerShip"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
