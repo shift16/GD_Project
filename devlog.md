@@ -1,7 +1,21 @@
-## 2024-10-29 - 3.0hrs: [In progress] Completed final draft for proposal
+## 2024-11-03 - 5.0hrs: Completed Conways Game of Life
+
+* Completed Conways Game of Life
+* Understood the proposal requirements
+* Updated devlog and Trello (GitHub projects)
+* Updated itch.io page
+
+## 2024-10-31 - 3.0hrs: Went back to old mechanic and continued project :/
+
+* Began brainstorming new proposal
+* A touch of sadness
+* Worked on implmenting Conways Game of Life and will go from there
+
+## 2024-10-29 - 6.0hrs: Completed final draft for proposal
 
 * Completed proposal V3
 * Began game mechanic
+* Undid ALL changes and went back to old mechanic
 
 ## 2024-10-27 - 3.5hrs: The new proposal
 
