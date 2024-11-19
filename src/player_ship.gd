@@ -1,26 +1,42 @@
-extends CharacterBody2D
+class_name PlayerShip extends CharacterBody2D
 
-@export var speed = 400
+const acceleration: float = 50
+const deceleration: float = 60
 
-var target = position
+var holding_mouse_button: bool = false
 
-var holdingDownLeftMouseButton: bool = false
+var ProjectileScene: Resource = preload("res://scenes/projectile.tscn")
+
+var direction: Vector2 = Vector2.ZERO
+
+var hit_points: int = 10
 
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.is_released():
-				holdingDownLeftMouseButton = false
+				holding_mouse_button = false
 			else:
-				holdingDownLeftMouseButton = true
+				holding_mouse_button = true
+	
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_SPACE:
+			var proj: Area2D = ProjectileScene.instantiate()
+			proj.direction = direction
+			proj.position = self.position
+			get_parent().add_child(proj)
 
 func _physics_process(delta):
-	velocity = position.direction_to(target) * speed
-	look_at(target)
-	if position.distance_to(target) > 10:
-		move_and_slide()
+	# We only want the direction to the mousev                               
+	var mouse_dir = (get_global_mouse_position() - position).normalized()
 	
-	if (holdingDownLeftMouseButton):
-		target = get_global_mouse_position()
-		
-# get_global_mouse_position()
+	if holding_mouse_button:
+		velocity += mouse_dir * acceleration * delta
+	else:
+		velocity -= velocity.normalized() * deceleration * delta
+	
+	if velocity.length() > 1:
+		direction = velocity.normalized()
+		look_at(position + velocity)
+	
+		position += velocity * delta

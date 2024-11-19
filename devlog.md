@@ -1,3 +1,7 @@
+## 2024-11-11 - 3.5hrs: Added the ability for the ship to accelerate and decelerate
+
+* The ship can now accelerate and decelerate properly
+
 ## 2024-11-03 - 5.0hrs: Completed Conways Game of Life
 
 * Completed Conways Game of Life
