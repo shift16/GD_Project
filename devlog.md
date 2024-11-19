@@ -1,3 +1,7 @@
+## 2024-11-12 - 5.5hrs: Added more features
+
+* Added some more features
+
 ## 2024-11-11 - 3.5hrs: Added the ability for the ship to accelerate and decelerate
 
 * The ship can now accelerate and decelerate properly
