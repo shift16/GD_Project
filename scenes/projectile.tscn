@@ -1,17 +1,91 @@
-[gd_scene load_steps=4 format=3 uid="uid://crjbx4eneopor"]
+[gd_scene load_steps=15 format=3 uid="uid://crjbx4eneopor"]
 
 [ext_resource type="Script" path="res://scenes/projectile.gd" id="1_2p8f5"]
-[ext_resource type="Texture2D" uid="uid://lo6fbgisqhls" path="res://assets/projectile.png" id="1_setbc"]
+[ext_resource type="Texture2D" uid="uid://c0bvo0s60x4yn" path="res://assets/void_assets/Main ship weapons/PNGs/Main ship weapon - Projectile - Big Space Gun.png" id="3_aovw2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_203v5"]
 radius = 5.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rj08"]
+atlas = ExtResource("3_aovw2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3nmv"]
+atlas = ExtResource("3_aovw2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uq5r5"]
+atlas = ExtResource("3_aovw2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_313bp"]
+atlas = ExtResource("3_aovw2")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edjbi"]
+atlas = ExtResource("3_aovw2")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrk4d"]
+atlas = ExtResource("3_aovw2")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdqms"]
+atlas = ExtResource("3_aovw2")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv0el"]
+atlas = ExtResource("3_aovw2")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ue574"]
+atlas = ExtResource("3_aovw2")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2m0m"]
+atlas = ExtResource("3_aovw2")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nmdss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rj08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3nmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uq5r5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_313bp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edjbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrk4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdqms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vv0el")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ue574")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2m0m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
 [node name="Projectile" type="Area2D"]
 script = ExtResource("1_2p8f5")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("1_setbc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_203v5")
@@ -19,6 +93,13 @@ shape = SubResource("CircleShape2D_203v5")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_nmdss")
+autoplay = "default"
+frame = 5
+frame_progress = 0.131044
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

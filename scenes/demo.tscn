@@ -1,12 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://1bv2v46wwte5"]
+[gd_scene load_steps=7 format=3 uid="uid://1bv2v46wwte5"]
 
 [ext_resource type="Script" path="res://scenes/demo.gd" id="1_qqtg0"]
 [ext_resource type="Script" path="res://src/player_ship.gd" id="1_tbguw"]
-[ext_resource type="Texture2D" uid="uid://c5752lgup8jiv" path="res://assets/icon.svg" id="2_jvqra"]
-[ext_resource type="PackedScene" uid="uid://ylf6he32pi01" path="res://scenes/asteroid.tscn" id="3_j4gwf"]
+[ext_resource type="Texture2D" uid="uid://bhgt5pbwxfq01" path="res://assets/void_assets/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="3_2n6gb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1da1"]
-size = Vector2(130, 131)
+size = Vector2(230.753, 250.722)
+
+[sub_resource type="Curve" id="Curve_a3byj"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0.00113379, 244.752), 0.0, 0.0, 0, 0, Vector2(0.422902, -266.077), 0.0, 0.0, 0, 0, Vector2(0.708617, 331.967), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_iayv2"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.823529, 0, 1)
 
 [node name="Demo" type="Node2D"]
 script = ExtResource("1_qqtg0")
@@ -17,16 +25,27 @@ scale = Vector2(0.52694, 0.52109)
 script = ExtResource("1_tbguw")
 
 [node name="Sprite2D" type="Sprite2D" parent="PlayerShip"]
-texture = ExtResource("2_jvqra")
+z_index = 10
+texture_filter = 1
+position = Vector2(7.62939e-06, -3.8147e-06)
+rotation = 1.5708
+scale = Vector2(8.54028, 8.54028)
+texture = ExtResource("3_2n6gb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerShip"]
-position = Vector2(0, -0.5)
+position = Vector2(-0.948872, -0.959515)
+scale = Vector2(0.995122, 1.04861)
 shape = SubResource("RectangleShape2D_e1da1")
 
 [node name="Camera2D" type="Camera2D" parent="PlayerShip"]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="PlayerShip"]
+position = Vector2(-77.808, 0)
+amount = 200
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 20.0
 gravity = Vector2(0, 0)
-
-[node name="Asteroid" parent="." instance=ExtResource("3_j4gwf")]
-position = Vector2(64, -57)
+angle_curve = SubResource("Curve_a3byj")
+color_ramp = SubResource("Gradient_iayv2")

@@ -23,7 +23,7 @@
 
 # Afterwards
 * Add an animation to the warp mechanic
-* Add the sprites for the ship
+[In progress] * Add the sprites for the ship
 * Add sprites for the asteroids
 
 ## MDA Framework Stuff

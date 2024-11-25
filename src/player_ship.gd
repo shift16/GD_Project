@@ -11,6 +11,8 @@ var direction: Vector2 = Vector2.ZERO
 
 var hit_points: int = 10
 
+@onready var particle_effect: CPUParticles2D = $CPUParticles2D
+
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
@@ -24,6 +26,7 @@ func _input(event):
 			var proj: Area2D = ProjectileScene.instantiate()
 			proj.direction = direction
 			proj.position = self.position
+			proj.relative_unit = self
 			get_parent().add_child(proj)
 
 func _physics_process(delta):
@@ -31,8 +34,10 @@ func _physics_process(delta):
 	var mouse_dir = (get_global_mouse_position() - position).normalized()
 	
 	if holding_mouse_button:
+		particle_effect.emitting = true
 		velocity += mouse_dir * acceleration * delta
 	else:
+		particle_effect.emitting = false
 		velocity -= velocity.normalized() * deceleration * delta
 	
 	if velocity.length() > 1:
