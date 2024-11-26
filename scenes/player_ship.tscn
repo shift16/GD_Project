@@ -1,0 +1,108 @@
+[gd_scene load_steps=7 format=3 uid="uid://dp4v5a5k2wxdw"]
+
+[ext_resource type="Script" path="res://src/player_ship.gd" id="1_grb3y"]
+[ext_resource type="Texture2D" uid="uid://bhgt5pbwxfq01" path="res://assets/void_assets/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="2_fsxv1"]
+[ext_resource type="Shape2D" uid="uid://xmyx72twr6tn" path="res://assets/tres_files/player_ship_collision_box.tres" id="3_rfvpo"]
+[ext_resource type="Curve" uid="uid://b5ilxhpd5fx8s" path="res://assets/tres_files/player_ship.tres" id="4_23upc"]
+[ext_resource type="Gradient" uid="uid://cq7oave12pj3i" path="res://assets/tres_files/player_ship_color_ramp.tres" id="5_pmwo6"]
+
+[sub_resource type="Gradient" id="Gradient_s8swd"]
+offsets = PackedFloat32Array(0, 0.893333, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="PlayerShip" type="CharacterBody2D"]
+process_mode = 3
+script = ExtResource("1_grb3y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 10
+texture_filter = 1
+rotation = 1.5708
+scale = Vector2(8.54, 8.54)
+texture = ExtResource("2_fsxv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = ExtResource("3_rfvpo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(-77.808, 0)
+amount = 200
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 20.0
+gravity = Vector2(0, 0)
+angle_curve = ExtResource("4_23upc")
+color_ramp = ExtResource("5_pmwo6")
+
+[node name="StarEffect" type="CPUParticles2D" parent="."]
+amount = 100
+lifetime = 10.0
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 1000)
+gravity = Vector2(0, 0)
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+color_ramp = SubResource("Gradient_s8swd")
+
+[node name="WarpMenu" type="Control" parent="."]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Warp1" type="ColorRect" parent="WarpMenu"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = -280.0
+offset_right = 265.0
+offset_bottom = -200.0
+color = Color(0.574863, 0.00417544, 0.989982, 1)
+
+[node name="Warp2" type="ColorRect" parent="WarpMenu"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = -160.0
+offset_right = 455.0
+offset_bottom = -80.0
+color = Color(0, 0.643698, 0.293356, 1)
+
+[node name="Warp3" type="ColorRect" parent="WarpMenu"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = -40.0
+offset_right = 615.0
+offset_bottom = 40.0
+color = Color(1, 0, 1, 1)
+
+[node name="Warp4" type="ColorRect" parent="WarpMenu"]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 76.0
+offset_right = 455.0
+offset_bottom = 156.0
+color = Color(1, 1, 0.396078, 1)
+
+[node name="Warp5" type="ColorRect" parent="WarpMenu"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 200.0
+offset_right = 265.0
+offset_bottom = 280.0
+color = Color(0.770239, 0.478411, 0.320846, 1)
+
+[node name="WarpTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="gui_input" from="WarpMenu/Warp1" to="." method="_on_warp_1_gui_input"]
+[connection signal="gui_input" from="WarpMenu/Warp2" to="." method="_on_warp_2_gui_input"]
+[connection signal="gui_input" from="WarpMenu/Warp3" to="." method="_on_warp_3_gui_input"]
+[connection signal="gui_input" from="WarpMenu/Warp4" to="." method="_on_warp_4_gui_input"]
+[connection signal="gui_input" from="WarpMenu/Warp5" to="." method="_on_warp_5_gui_input"]
+[connection signal="timeout" from="WarpTimer" to="." method="_on_warp_timer_timeout"]

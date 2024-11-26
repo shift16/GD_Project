@@ -13,4 +13,5 @@ func _on_timer_timeout() -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is Asteroid:
+		area.hit_points -= 3
 		self.queue_free()

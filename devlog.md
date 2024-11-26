@@ -1,3 +1,15 @@
+## 2024-11-24 - 
+
+## 2024-11-22 - 7hrs: Polish
+
+* Added the assets for the game
+* Updated sodme code
+
+## 2024-11-19 - 6hrs: Added more features
+
+* The ship is no longer a Godot logo
+* Updated some logic and began working on the final features
+
 ## 2024-11-12 - 5.5hrs: Added more features
 
 * Added some more features
