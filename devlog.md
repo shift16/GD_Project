@@ -1,6 +1,18 @@
-## 2024-11-24 - 
+## 2024-11-26 - 6hrs: Completed project
 
-## 2024-11-22 - 7hrs: Polish
+* Completed warp mechanic
+* Completed final polish
+* Completed other complement mechanics
+
+## 2024-11-25 - 4hrs: Continue project
+
+* Added more assets and began the final polishes for the project
+
+## 2024-11-24 - 8hrs: Continue project
+
+* Continued adding the necessary features
+
+## 2024-11-22 - 5hrs: Polish
 
 * Added the assets for the game
 * Updated sodme code
