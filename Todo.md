@@ -12,14 +12,14 @@
 
 # Asteroids
 * ✅ Add asteroids that can damage the player's ship
-* Add procedural generation of asteroids
+* ✅ Add procedural generation of asteroids
 
 # Warp
-* Add the warp mechanic
-	* Add the radial menu
-	* Add the teleportation ability
-	* Have the asteroid procedural generator change
-	* Have the existing asteroids be deleted
+* ✅ Add the warp mechanic
+	* ✅Add the radial menu
+	* ✅ Add the teleportation ability
+	* ✅ Have the asteroid procedural generator change
+	* ✅ Have the existing asteroids be deleted
 
 # Afterwards
 * Add an animation to the warp mechanic
