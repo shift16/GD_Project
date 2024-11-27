@@ -1,3 +1,7 @@
+## 2024-11-27 - 2hrs: Added one last feature
+
+* Added a simple quest to give the user an excuse to use the mechanic
+
 ## 2024-11-26 - 6hrs: Completed project
 
 * Completed warp mechanic

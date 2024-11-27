@@ -230,6 +230,7 @@ func warp(col: Color):
 	entered_galaxy_label.text = "Entered Galaxy: " + col.to_html(false)
 	entered_galaxy_label.visible = true
 	var children: Array[Node] = get_parent().get_children()
+	handle_quest(col)
 	
 	for node in children:
 		if node is Asteroid or node is SpaceProjectile or node is MissleProjectile:
@@ -266,3 +267,33 @@ func _on_warp_5_gui_input(event: InputEvent) -> void:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.is_released():
 				warp(warp_rects[4].color)
+
+# Simple quest handler
+@onready var quest_label: Label = get_parent().get_node('CanvasLayer/QuestText')
+@onready var quest_extra_info_label: Label = quest_label.get_node('ExtraInfo')
+const COLOR_RANGE_THRESHOLD: float = 0.5
+const QUEST_COLORS: Array[Color] = [Color("1a285a"), Color("3b5842"), Color("a99041")]
+var current_quest: int = 0
+var completed_quest: bool = false
+
+func col_is_close(col: Color, to_col: Color) -> bool:
+	var col_diff: Color = col - to_col
+	if abs(col_diff.r) <= COLOR_RANGE_THRESHOLD and abs(col_diff.g) <= COLOR_RANGE_THRESHOLD and abs(col_diff.b) <= COLOR_RANGE_THRESHOLD:
+		return true
+	else:
+		return false
+
+func handle_quest(col: Color):
+	if completed_quest == false:
+		if col_is_close(col, QUEST_COLORS[current_quest]):
+			current_quest += 1
+			if current_quest != 3:
+				quest_label.text = "Warp back to the Milky way!\nWarp to a galaxy close to:\n" + QUEST_COLORS[current_quest].to_html(false)
+			elif current_quest == 3:
+				quest_label.text = "Congrats!\nYou've made it to the Milky Way Galaxy!\nIt's going to take a while to get back to Earth so sit back and relax"
+				quest_extra_info_label.visible = false
+				game_over_menu.text = "[b] SUCCESS! [/b]"
+				game_over_menu.visible = true
+				completed_quest = true
+				start = false
+				get_tree().paused = true

@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://1bv2v46wwte5"]
+[gd_scene load_steps=9 format=3 uid="uid://1bv2v46wwte5"]
 
-[ext_resource type="Script" path="res://src/demo.gd" id="1_qqtg0"]
 [ext_resource type="PackedScene" uid="uid://dp4v5a5k2wxdw" path="res://scenes/player_ship.tscn" id="2_ccyda"]
 [ext_resource type="Script" path="res://src/start.gd" id="4_oowvh"]
 [ext_resource type="Script" path="res://scenes/auto_hide.gd" id="4_owbx7"]
@@ -15,7 +14,6 @@ bg_color = Color(1, 1, 1, 1)
 bg_color = Color(0.363819, 0.587174, 1, 1)
 
 [node name="Demo" type="Node2D"]
-script = ExtResource("1_qqtg0")
 
 [node name="PlayerShip" parent="." instance=ExtResource("2_ccyda")]
 
@@ -50,6 +48,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_bntnj")
 show_percentage = false
 
 [node name="GameOver" type="RichTextLabel" parent="CanvasLayer"]
+process_mode = 3
 visible = false
 offset_left = 383.0
 offset_top = 443.0
@@ -62,17 +61,39 @@ fit_content = true
 scroll_active = false
 
 [node name="EnteredGalaxyLabel" type="Label" parent="CanvasLayer"]
+process_mode = 3
 visible = false
-offset_left = 271.0
-offset_top = 6.0
-offset_right = 718.0
-offset_bottom = 84.0
+offset_left = 503.0
+offset_top = 2.0
+offset_right = 950.0
+offset_bottom = 80.0
 theme_override_font_sizes/font_size = 57
 text = "Entered Galaxy: "
 
 [node name="auto_hide" type="Timer" parent="CanvasLayer/EnteredGalaxyLabel"]
 wait_time = 4.0
 script = ExtResource("4_owbx7")
+
+[node name="QuestText" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 450.0
+offset_bottom = 81.0
+theme_override_font_sizes/font_size = 32
+text = "Warp back to the Milky way!
+Warp to a galaxy close to: 
+1a285a
+"
+
+[node name="ExtraInfo" type="Label" parent="CanvasLayer/QuestText"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 134.0
+offset_right = 492.0
+offset_bottom = 189.0
+theme_override_font_sizes/font_size = 16
+text = "(hint: they're HTML color codes)"
 
 [node name="StartGUI" type="Control" parent="."]
 layout_mode = 3
